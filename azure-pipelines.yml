@@ -1,3 +1,12 @@
-pool: Default
-steps:
-- bash: echo hello world
+
+
+stages:
+- stage: MyBashStage
+  jobs:
+  - job: MyBashJob
+    pool: Default
+    steps:
+    - task: Bash@3
+      inputs:
+        targetType: 'inline'  # You can also use a script file
+        script: 'echo "Hello from Bash on Windows Agent!"'  # Your bash commands here
