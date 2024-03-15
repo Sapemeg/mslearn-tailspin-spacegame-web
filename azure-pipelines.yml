@@ -1,12 +1,10 @@
-
-
 stages:
 - stage: MyBashStage
   jobs:
   - job: MyBashJob
-    pool: Default
+    pool: Azure Pipelines
     steps:
     - task: Bash@3
       inputs:
         targetType: 'inline'  # You can also use a script file
-        script: 'echo "Hello from Bash on Windows Agent!"'  # Your bash commands here
+        script: 'echo "Hello from Bash on Azure Pipelines Agent!"'  # Your bash commands here
